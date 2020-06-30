@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  diun:
+    image: crazymax/diun:latest
+    container_name: diun
+    restart: always
+    volumes:
+      - data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - "TZ=Etc/UTC"
+      - "LOG_LEVEL=info"
+      - "LOG_JSON=false"
+      - "DIUN_WATCH_WORKERS=10"
+      - "DIUN_WATCH_SCHEDULE=0 13 * * *"
+      - "DIUN_PROVIDERS_DOCKER=true"
+      - "DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT=true"
+
+volumes:
+  data:
