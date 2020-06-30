@@ -1,0 +1,7 @@
+- name: postgres
+- name: redis
+- name: nextcloud:fpm
+- name: nginx
+- name: jwilder/nginx-proxy
+- name: jrcs/letsencrypt-nginx-proxy-companion
+- name: bitwardenrs/server
